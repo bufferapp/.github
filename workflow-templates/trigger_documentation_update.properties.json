@@ -1,7 +1,7 @@
 {
     "name": "Update Documentation Workflow",
     "description": "Trigger an update of the the Buffer API documentation",
-    "iconName": "example-icon",
+    "iconName": "doc_logo",
     "categories": [
         "GraphQL", "typescript", "javascript"
     ]

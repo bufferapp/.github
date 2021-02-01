@@ -1,0 +1,23 @@
+name: Update documentation
+
+on:
+  push:
+    paths:
+    - 'path_to_schema'
+
+jobs:
+  triggerUpdate:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - name: Trigger documentation Update
+      run: |
+        curl -XPOST -u "bufferbot:${WORKFLOW_PAT}" \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          -H "Content-Type: application/json" \
+          https://api.github.com/repos/${DOCUMENTATION_REPO}/dispatches \
+          --data '{"event_type": "${CURRENT_REPO}"}'
+      env:
+        WORKFLOW_PAT: ${{ secrets.WORKFLOW_PAT }}
+        DOCUMENTATION_REPO: ${{ secrets.DOCUMENTATION_REPO }}
+        CURRENT_REPO: ${{ github.event.repository.name }}

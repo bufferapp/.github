@@ -9,7 +9,7 @@
 
 ### Screenshots (if appropriate)
 
-<!-- A screenshot speaks a thousand words
+<!-- A screenshot speaks a thousand words -->
 
 ### Best Practices Checklist
 
